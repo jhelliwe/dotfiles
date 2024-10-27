@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while true
+do
+	nwg-dock-hyprland -i 32 -x -lp start
+	sleep 3
+done
