@@ -2,7 +2,7 @@ window#osd {
   padding: 12px 20px;
   border-radius: 99px;
   border: none;
-  background: alpha(@theme_bg_color, 0.1); }
+  background: alpha(lightblue, 0.8); }
   window#osd #container {
     margin: 16px; }
   window#osd image,

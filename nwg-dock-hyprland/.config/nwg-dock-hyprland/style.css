@@ -1,6 +1,6 @@
 window {
   background: #36364f;
-  background: rgba(156, 142, 122, 0.3);
+  background: rgba(50, 50, 90, 0.9);
 	border-radius: 2px;
 	border-style: none;
 	border-width: 1px;
@@ -15,7 +15,7 @@ window {
 #active {
 	/* This is to underline the button representing the currently active window */
 	border-bottom: solid 1px;
-	border-color: rgba(255, 255, 255, 0.3)
+	border-color: rgba(255, 255, 255, 0.9)
 }
 
 button, image {

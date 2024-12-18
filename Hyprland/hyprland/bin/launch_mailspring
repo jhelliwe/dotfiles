@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec mailspring --password-store=kwallet5

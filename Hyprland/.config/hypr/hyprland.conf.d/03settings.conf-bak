@@ -1,0 +1,110 @@
+general { 
+    gaps_in = 10 
+    gaps_out = 25
+    border_size = 2
+    col.active_border = rgba(ff3300ee) rgba(8f00ffee) 45deg
+    col.inactive_border = rgba(595959aa)
+    resize_on_border = true
+    allow_tearing = false
+    layout = dwindle
+    no_border_on_floating = true
+}
+
+decoration {
+    rounding = 8
+    active_opacity = 1.0
+    inactive_opacity = 1.0
+    shadow {
+    	enabled = true
+        range = 75
+        render_power = 4
+        ignore_window = false
+        color = rgba(1a1a1aee)
+    }
+    blur {
+        enabled = true
+        size = 12
+        passes = 3
+	new_optimizations = true
+	brightness = 1.25
+	noise = 0.1222
+        vibrancy = 2
+	xray = false
+    }
+}
+
+animations {
+    enabled = true
+    bezier = slidebezier, 0.60, 0.9, 1.1, 0.75
+    bezier = myBezier, 0.30, 1.3, 0.4, 1.15
+    animation = windows, 1, 6, myBezier
+    animation = windowsIn, 1, 8, myBezier, popin 9%
+    animation = windowsOut, 1, 7, myBezier, popin
+    animation = windowsMove, 1, 7, myBezier, slide
+    animation = borderangle, 1, 8, default
+    animation = fade, 1, 10, default
+    animation = workspaces, 1, 2, slidebezier, slidefadevert
+}
+
+dwindle {
+    pseudotile = true 
+    preserve_split = true 
+    smart_split = true
+}
+
+master {
+    new_status = master
+}
+
+misc { 
+    force_default_wallpaper = 0
+    disable_hyprland_logo = true
+    mouse_move_enables_dpms = true
+    key_press_enables_dpms = true
+    animate_manual_resizes = true
+    initial_workspace_tracking = true
+}
+
+cursor {
+    no_warps = true
+    enable_hyprcursor = true
+    hide_on_key_press = true
+}
+
+input {
+    kb_layout = us
+    kb_variant =
+    kb_model =
+    kb_options =
+    kb_rules =
+
+    follow_mouse = 1
+    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+
+    touchpad {
+        natural_scroll = false
+    }
+}
+
+gestures {
+    workspace_swipe = false
+}
+
+device {
+    name = epic-mouse-v1
+    sensitivity = -0.5
+}
+
+plugin {
+    hyprexpo {
+        columns = 3
+        gap_size = 5
+        bg_col = rgb(111111)
+        workspace_method = center current # [center/first] [workspace] e.g. first 1 or center m+1
+
+        enable_gesture = true # laptop touchpad
+        gesture_fingers = 3  # 3 or 4
+        gesture_distance = 300 # how far is the "max"
+        gesture_positive = true # positive = swipe down. Negative = swipe up.
+    }
+}
