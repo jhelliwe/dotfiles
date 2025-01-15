@@ -1,5 +1,5 @@
 {
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["wlr/taskbar"],
     "modules-center": ["clock", "idle_inhibitor"],
     "modules-right": ["wireplumber", "backlight", "cpu", "temperature", "memory", "network", "custom/notification", "tray"],
 
@@ -46,8 +46,16 @@
 "wireplumber": {
     "format": "  {volume}%  {icon}  ",
     "format-muted": "",
-    "on-click": "helvum",
+    "on-click": "pavucontrol",
     "format-icons": ["", "", ""]
+},
+"pulseaudio": {
+    "format": "{volume}%",
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "format-icons": {
+        "default": ["", ""]
+    },
 },
 "memory": {
     "interval": 30,
@@ -83,6 +91,15 @@
             "activated": "",
             "deactivated": ""
         },
+    },
+    "wlr/taskbar": {
+           	"format": "{icon}",
+		"icon-size": 18,
+        	"tooltip": true,
+        	"tooltip-format": "{title}",
+        	"on-click": "activate",
+        	"on-click-middle": "close",
+        	"sort-by-app-id": true
     },
     "tray": {
         "icon-size": 15,
