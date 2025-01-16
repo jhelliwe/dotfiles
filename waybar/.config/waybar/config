@@ -1,7 +1,7 @@
 {
-    "modules-left": ["wlr/taskbar"],
-    "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["wireplumber", "backlight", "cpu", "temperature", "memory", "network", "custom/notification", "tray"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": [],
+    "modules-right": ["idle_inhibitor", "wireplumber", "backlight", "cpu", "temperature", "memory", "network", "custom/notification", "tray", "clock"],
 
     "cpu": {
     "interval": 2,
@@ -28,6 +28,15 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
+  "hyprland/window": {
+    "format": " {}",
+    "rewrite": {
+        "(.*) — Vivaldi": "🌎 $1",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": false,
+    "icon": true
+},
 "hyprland/workspaces": {
 	"format": "{name}: {icon}",
 	"format-icons": {
