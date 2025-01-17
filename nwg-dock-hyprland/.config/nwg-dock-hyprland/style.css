@@ -1,10 +1,10 @@
 window {
-  background: #333333;
+  background: rgba(0,43,51,0.25);
 	border-radius: 20px;
 	border-style: none;
 	border-width: 1px;
 	border-color:rgba(156, 142, 122, 0.7);
-	opacity: 0.8;
+	opacity: 1.0;
 }
 
 #box {
