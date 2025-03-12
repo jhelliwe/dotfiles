@@ -18,6 +18,12 @@ window {
 	border-color: #FFFFFF
 }
 
+#inactive {
+	/* This is to underline the button representing the currently active window */
+	border-bottom: solid 1px;
+	border-color: #EEEEEE
+}
+
 button, image {
 	background: none;
 	border-style: none;

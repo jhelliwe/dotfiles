@@ -2,6 +2,6 @@
 
 while true
 do
-	nwg-dock-hyprland -i 32 -x -mb 4 -c "wofi --show drun" -lp start
+	nwg-dock-hyprland -p bottom -i 32 -x -mb 4 -c "wofi --show drun" -lp start
 	sleep 3
 done
