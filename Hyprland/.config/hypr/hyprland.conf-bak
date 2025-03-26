@@ -1,0 +1,24 @@
+# Hyprland Config files for LargeBoutros
+# for gui-wm/hyprland-0.42
+
+monitor=,preferred,auto,auto
+$menu = wofi --show drun
+
+source = ~/.config/hypr/hyprland.conf.d/01env.conf
+source = ~/.config/hypr/hyprland.conf.d/02exec.conf
+source = ~/.config/hypr/hyprland.conf.d/03settings.conf
+source = ~/.config/hypr/hyprland.conf.d/04binds.conf
+source = ~/.config/hypr/hyprland.conf.d/05window_rules.conf
+
+binds {
+    workspace_center_on = 1
+}
+
+render {
+    explicit_sync = 2
+    explicit_sync_kms = 2
+}
+
+xwayland {
+    enabled = true
+}
