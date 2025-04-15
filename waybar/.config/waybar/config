@@ -89,7 +89,7 @@
 },
  "temperature": {
     "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
     "format": "{temperatureC}°C "
@@ -137,4 +137,15 @@
         },
         "on-click": "pavucontrol"
     },
+    "power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
+}
 }
