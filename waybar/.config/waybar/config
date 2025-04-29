@@ -1,12 +1,17 @@
 {
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": [],
+    "modules-center": ["custom/now-playing"],
     "modules-right": ["idle_inhibitor", "wireplumber", "backlight", "cpu", "temperature", "memory", "network", "custom/notification", "tray", "clock"],
 
     "cpu": {
     "interval": 2,
     "format": "{usage}%  ",
     "max-length":7 
+},
+  "custom/now-playing": {
+    "format": "{} ",
+    "interval": 5,
+    "exec": "~/hyprland/bin/getspot.sh",
 },
   "custom/notification": {
     "tooltip": false,
