@@ -1,5 +1,8 @@
 #!/bin/bash
 
+fastfetch -c examples/7.jsonc | grep -i playing | awk -F\> ' { print $2 } '
+exit
+
 if pidof -q spotify 
 then
 	artist=`python ~/hyprland/bin/getspot.py  | awk ' /^xesam:artist/ { print } ' | sed "s/xesam:artist dbus.Array..dbus.String..\(.*\).... signature=dbus.Signature..s.., variant_level=1./\1/g"`

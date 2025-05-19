@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Translucent */
 
 @define-color critical #ff0000; /* critical color */
@@ -39,13 +38,6 @@ window#waybar {
 
 window#waybar.hidden {
     opacity: 0.1;
-}
-
-window#waybar.empty,
-window#waybar.empty #window {
-    padding: 0px;
-    border: 0px;
-    background-color: transparent;
 }
 
 tooltip {
