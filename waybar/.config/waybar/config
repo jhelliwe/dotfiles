@@ -83,8 +83,9 @@
     "network": {
     "interface": "eno1",
     "format": "{ifname}",
+    "family": "ipv4",
     "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-ethernet": "{ifname} up 󰊗",
     "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
