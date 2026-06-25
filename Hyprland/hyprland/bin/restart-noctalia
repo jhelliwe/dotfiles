@@ -1,0 +1,4 @@
+#!/bin/sh
+
+pkill qs
+qs -c noctalia-shell -d

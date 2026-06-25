@@ -1,3 +1,0 @@
-#!/bin/bash
-
-exec vivaldi --password-store=kwallet5

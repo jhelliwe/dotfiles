@@ -2,4 +2,4 @@
 
 loginctl lock-session
 sleep 5
-hyprctl dispatch dpms off
+hyprctl dispatch 'hl.dsp.dpms({ action = "disable" })'
