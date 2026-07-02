@@ -84,7 +84,7 @@ hl.device({
 -- Key Binds
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("opera"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("/usr/bin/brave-browser-stable"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + K", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
@@ -348,6 +348,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swww-daemon")
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("qs -c noctalia-shell")
+	hl.exec_cmd("wl-paste --type text --watch cliphist store")
+	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	-- hl.exec_cmd("wl-clip-persist --clipboard regular")
 end)
 
 hl.on("hyprland.shutdown", function()
