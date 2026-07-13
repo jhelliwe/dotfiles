@@ -42,16 +42,16 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.63,
+        "backgroundOpacity": 0.29,
         "barType": "floating",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 0.49,
-        "contentPadding": 2,
-        "density": "spacious",
+        "capsuleOpacity": 0.46,
+        "contentPadding": 0,
+        "density": "default",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1.07,
-        "frameRadius": 4,
+        "fontScale": 1.08,
+        "frameRadius": 24,
         "frameThickness": 4,
         "hideOnOverview": false,
         "marginHorizontal": 0,
@@ -75,7 +75,7 @@
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": true,
-        "widgetSpacing": 9,
+        "widgetSpacing": 0,
         "widgets": {
             "center": [
                 {
@@ -110,6 +110,11 @@
                     "iconColor": "none",
                     "id": "Launcher",
                     "useDistroLogo": false
+                },
+                {
+                    "defaultSettings": {
+                    },
+                    "id": "plugin:workspace-overview"
                 },
                 {
                     "characterCount": 10,
@@ -147,6 +152,16 @@
                     "textColor": "none",
                     "useFixedWidth": false,
                     "visualizerType": "wave"
+                },
+                {
+                    "capsLockIcon": "letter-c",
+                    "hideWhenOff": false,
+                    "id": "LockKeys",
+                    "numLockIcon": "letter-n",
+                    "scrollLockIcon": "letter-s",
+                    "showCapsLock": true,
+                    "showNumLock": true,
+                    "showScrollLock": true
                 }
             ],
             "right": [
@@ -195,15 +210,6 @@
                     "textColor": "none"
                 },
                 {
-                    "clockColor": "none",
-                    "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
-                    "formatVertical": "HH mm - dd MM",
-                    "id": "Clock",
-                    "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false
-                },
-                {
                     "defaultSettings": {
                         "autoPaste": false,
                         "autoPasteDelay": 300,
@@ -235,9 +241,13 @@
                     ]
                 },
                 {
-                    "defaultSettings": {
-                    },
-                    "id": "plugin:workspace-overview"
+                    "clockColor": "none",
+                    "customFont": "",
+                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatVertical": "HH mm - dd MM",
+                    "id": "Clock",
+                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "useCustomFont": false
                 }
             ]
         }
@@ -246,7 +256,7 @@
         "backlightDeviceMappings": [
         ],
         "brightnessStep": 5,
-        "enableDdcSupport": false,
+        "enableDdcSupport": true,
         "enforceMinimum": true
     },
     "calendar": {
@@ -353,11 +363,11 @@
         "animationSpeed": 1,
         "backgroundOpacity": 1,
         "colorizeIcons": false,
-        "deadOpacity": 0.44,
+        "deadOpacity": 0.47000000000000003,
         "displayMode": "exclusive",
         "dockType": "floating",
         "enabled": true,
-        "floatingRatio": 0.6,
+        "floatingRatio": 0,
         "groupApps": true,
         "groupClickAction": "list",
         "groupContextMenuMode": "extended",
@@ -371,14 +381,15 @@
         "launcherPosition": "start",
         "launcherUseDistroLogo": false,
         "monitors": [
-            "DP-3"
+            "DP-3",
+            "DP-1"
         ],
         "onlySameOutput": false,
         "pinnedApps": [
             "brave-browser",
-            "eu.betterbird.Betterbird",
+            "Mailspring",
             "vesktop",
-            "dev.diegovsky.Riff",
+            "spotify",
             "slack",
             "gpodder",
             "signal",
@@ -394,7 +405,7 @@
         "showDockIndicator": true,
         "showLauncherIcon": false,
         "sitOnFrame": false,
-        "size": 0.9
+        "size": 0.53
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -408,12 +419,12 @@
         "clockStyle": "digital",
         "compactLockScreen": false,
         "dimmerOpacity": 0.47000000000000003,
-        "enableBlurBehind": false,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
-        "enableShadows": false,
+        "enableShadows": true,
         "forceBlackScreenCorners": true,
-        "iRadiusRatio": 0.5,
+        "iRadiusRatio": 0.44,
         "keybinds": {
             "keyDown": [
                 "Down"
@@ -447,9 +458,9 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": false,
-        "radiusRatio": 0.38,
+        "radiusRatio": 0.46,
         "reverseScroll": false,
-        "scaleRatio": 1,
+        "scaleRatio": 0.8500000000000001,
         "screenRadiusRatio": 0.55,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
@@ -539,6 +550,7 @@
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
+            "DP-1"
         ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
@@ -559,17 +571,18 @@
         }
     },
     "osd": {
-        "autoHideMs": 2000,
-        "backgroundOpacity": 0.6,
+        "autoHideMs": 4300,
+        "backgroundOpacity": 1,
         "enabled": true,
         "enabledTypes": [
-            0,
             1,
             2,
+            0,
             3
         ],
         "location": "bottom",
         "monitors": [
+            "DP-1"
         ],
         "overlayLayer": true
     },
@@ -581,7 +594,7 @@
         "countdownDuration": 10000,
         "enableCountdown": false,
         "largeButtonsLayout": "single-row",
-        "largeButtonsStyle": false,
+        "largeButtonsStyle": true,
         "position": "center",
         "powerOptions": [
             {
@@ -630,8 +643,8 @@
                 "action": "rebootToUefi",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": false,
-                "keybind": ""
+                "enabled": true,
+                "keybind": "5"
             },
             {
                 "action": "userspaceReboot",
@@ -676,20 +689,20 @@
     "ui": {
         "boxBorderEnabled": true,
         "fontDefault": "Carlito",
-        "fontDefaultScale": 1,
+        "fontDefaultScale": 1.08,
         "fontFixed": "Cascadia Mono",
-        "fontFixedScale": 0.91,
+        "fontFixedScale": 1,
         "panelBackgroundOpacity": 0.62,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
         "settingsPanelSideBarCardStyle": true,
         "tooltipsEnabled": true,
-        "translucentWidgets": false
+        "translucentWidgets": true
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/johnh/Wallpapers",
+        "directory": "~/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
@@ -723,7 +736,7 @@
         "useOriginalImages": false,
         "useSolidColor": false,
         "useWallhaven": false,
-        "viewMode": "browse",
+        "viewMode": "recursive",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",

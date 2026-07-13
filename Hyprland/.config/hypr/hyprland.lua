@@ -5,7 +5,7 @@ hl.monitor({
     output = "",
     mode = "preferred",
     position = "auto",
-    scale = "2",
+    scale = "1",
 })
 
 local menu = "wofi --show drun"
@@ -99,7 +99,7 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call wallpa
 hl.bind(mainMod .. " + X", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pin())
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("betterbird-bin"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/hyprland/bin/start-mailspring"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprgui"))
 
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -148,6 +148,10 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call v
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume muteOutput"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness increase"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness decrease"), { locked = true, repeating = true })
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media next"))
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media previous"))
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"))
+hl.bind("XF86AudioStop", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media stop"))
 
 -- Custom Window Rules
 hl.window_rule({
