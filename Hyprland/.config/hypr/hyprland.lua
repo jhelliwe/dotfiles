@@ -133,9 +133,8 @@ hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind("CTRL + right", hl.dsp.focus({ workspace = "r+1" }))
 hl.bind("CTRL + left", hl.dsp.focus({ workspace = "r-1" }))
--- hl.bind("CTRL + up", hl.plugin.hyprexpo.expo("toggle"))
 hl.bind("CTRL + up", function()
-   hl.plugin.hyprexpo.expo("toggle")
+    hl.plugin.scrolloverview.overview("toggle")
 end)
 hl.bind(mainMod .. " + period", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + comma", hl.dsp.layout("move -col"))
@@ -320,25 +319,42 @@ hl.config({
     gestures = {
         -- workspace_swipe = false
     },
-	plugin = {
-        hyprexpo = {
-            columns = 4,
-            gaps_in = 10,
-            gaps_out = 10,
-            bg_col = "rgb(444444)",
-			border_color = "rgba(ff3300ee) rgba(8f00ffee)",
-			border_color_current = "rgba(ffff00ee)",
-			border_color_focus = "rgba(ffaa00ee)",
-			selection_label_color = "rgba(ff3300ee)",
-            workspace_method = "first 1",
-            keynav_enable = 0,
-            label_enable = 1,
-            border_width = 4,
-			tile_rounding = 20,
-			label_font_size = 12,
-			label_bg_shape = "rounded",
-			label_padding = 64,
-			label_bg_rounding = 20,
+--	plugin = {
+--        hyprexpo = {
+--            columns = 4,
+--            gaps_in = 10,
+--            gaps_out = 10,
+--            bg_col = "rgb(444444)",
+--			border_color = "rgba(ff3300ee) rgba(8f00ffee)",
+--			border_color_current = "rgba(ffff00ee)",
+--			border_color_focus = "rgba(ffaa00ee)",
+--			selection_label_color = "rgba(ff3300ee)",
+--            workspace_method = "first 1",
+--            keynav_enable = 0,
+--            label_enable = 1,
+--            border_width = 4,
+--			tile_rounding = 20,
+--			label_font_size = 12,
+--			label_bg_shape = "rounded",
+--			label_padding = 64,
+--			label_bg_rounding = 20,
+--        },
+--    },
+    plugin = {
+        scrolloverview = {
+            gesture_distance = 300, -- how far is the "max" for the gesture
+            scale = 0.5, -- preferred overview scale
+            workspace_gap = 100,
+            layout = "vertical", -- vertical or horizontal
+            wallpaper = 0, -- 0: global only, 1: per-workspace only, 2: both
+            blur = false, -- blur only the main overview wallpaper
+
+            shadow = {
+                enabled = false,
+                range = 50,
+                render_power = 3,
+                color = 0xee1a1a1a,
+            },
         },
     },
 })
@@ -352,9 +368,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swww-daemon")
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("qs -c noctalia-shell")
-	hl.exec_cmd("wl-paste --type text --watch cliphist store")
-	hl.exec_cmd("wl-paste --type image --watch cliphist store")
-	-- hl.exec_cmd("wl-clip-persist --clipboard regular")
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+    hl.exec_cmd("hyprctl setcursor 'Capitaine Gruvbox' 24")
 end)
 
 hl.on("hyprland.shutdown", function()

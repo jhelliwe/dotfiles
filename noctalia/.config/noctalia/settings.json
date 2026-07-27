@@ -42,16 +42,16 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.29,
+        "backgroundOpacity": 0.13,
         "barType": "floating",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 0.46,
+        "capsuleOpacity": 0.27,
         "contentPadding": 0,
         "density": "default",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
         "fontScale": 1.08,
-        "frameRadius": 24,
+        "frameRadius": 10,
         "frameThickness": 4,
         "hideOnOverview": false,
         "marginHorizontal": 0,
@@ -75,7 +75,7 @@
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": true,
-        "widgetSpacing": 0,
+        "widgetSpacing": 5,
         "widgets": {
             "center": [
                 {
@@ -138,6 +138,16 @@
                     "unfocusedIconsOpacity": 1
                 },
                 {
+                    "capsLockIcon": "letter-c",
+                    "hideWhenOff": false,
+                    "id": "LockKeys",
+                    "numLockIcon": "letter-n",
+                    "scrollLockIcon": "letter-s",
+                    "showCapsLock": true,
+                    "showNumLock": true,
+                    "showScrollLock": true
+                },
+                {
                     "compactMode": false,
                     "hideMode": "transparent",
                     "hideWhenIdle": false,
@@ -152,33 +162,23 @@
                     "textColor": "none",
                     "useFixedWidth": false,
                     "visualizerType": "wave"
-                },
-                {
-                    "capsLockIcon": "letter-c",
-                    "hideWhenOff": false,
-                    "id": "LockKeys",
-                    "numLockIcon": "letter-n",
-                    "scrollLockIcon": "letter-s",
-                    "showCapsLock": true,
-                    "showNumLock": true,
-                    "showScrollLock": true
                 }
             ],
             "right": [
                 {
                     "compactMode": false,
                     "diskPath": "/",
-                    "iconColor": "primary",
+                    "iconColor": "none",
                     "id": "SystemMonitor",
-                    "showCpuCores": false,
-                    "showCpuFreq": false,
+                    "showCpuCores": true,
+                    "showCpuFreq": true,
                     "showCpuTemp": true,
                     "showCpuUsage": true,
                     "showDiskAvailable": false,
-                    "showDiskUsage": false,
+                    "showDiskUsage": true,
                     "showDiskUsageAsPercent": false,
                     "showGpuTemp": false,
-                    "showLoadAverage": false,
+                    "showLoadAverage": true,
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
@@ -392,13 +392,15 @@
             "spotify",
             "slack",
             "gpodder",
+            "qmmp",
             "signal",
             "io.missioncenter.MissionCenter",
             "org.gnome.baobab",
             "org.stellarium.Stellarium",
             "gimp",
             "org.gnome.Weather",
-            "virt-manager"
+            "virt-manager",
+            "vlc"
         ],
         "pinnedStatic": true,
         "position": "bottom",
@@ -418,7 +420,7 @@
         "clockFormat": "hh\\nmm",
         "clockStyle": "digital",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.47000000000000003,
+        "dimmerOpacity": 0.09,
         "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
@@ -458,7 +460,7 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": false,
-        "radiusRatio": 0.46,
+        "radiusRatio": 0.38,
         "reverseScroll": false,
         "scaleRatio": 0.8500000000000001,
         "screenRadiusRatio": 0.55,
@@ -487,7 +489,7 @@
     "idle": {
         "customCommands": "[]",
         "enabled": true,
-        "fadeDuration": 5,
+        "fadeDuration": 30,
         "lockCommand": "",
         "lockTimeout": 600,
         "resumeLockCommand": "",
@@ -571,7 +573,7 @@
         }
     },
     "osd": {
-        "autoHideMs": 4300,
+        "autoHideMs": 1500,
         "backgroundOpacity": 1,
         "enabled": true,
         "enabledTypes": [
@@ -692,7 +694,7 @@
         "fontDefaultScale": 1.08,
         "fontFixed": "Cascadia Mono",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.62,
+        "panelBackgroundOpacity": 0.43,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
