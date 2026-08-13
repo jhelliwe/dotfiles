@@ -42,19 +42,19 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.13,
+        "backgroundOpacity": 0.44,
         "barType": "floating",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 0.27,
-        "contentPadding": 0,
+        "capsuleOpacity": 0.5,
+        "contentPadding": 2,
         "density": "default",
         "displayMode": "always_visible",
-        "enableExclusionZoneInset": true,
-        "fontScale": 1.08,
+        "enableExclusionZoneInset": false,
+        "fontScale": 1.1300000000000001,
         "frameRadius": 10,
         "frameThickness": 4,
         "hideOnOverview": false,
-        "marginHorizontal": 0,
+        "marginHorizontal": 145,
         "marginVertical": 0,
         "middleClickAction": "none",
         "middleClickCommand": "",
@@ -71,11 +71,11 @@
         "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
-        "showCapsule": true,
+        "showCapsule": false,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": true,
-        "widgetSpacing": 5,
+        "widgetSpacing": 2,
         "widgets": {
             "center": [
                 {
@@ -102,16 +102,6 @@
                     "useDistroLogo": false
                 },
                 {
-                    "colorizeSystemIcon": "error",
-                    "colorizeSystemText": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "rocket",
-                    "iconColor": "none",
-                    "id": "Launcher",
-                    "useDistroLogo": false
-                },
-                {
                     "defaultSettings": {
                     },
                     "id": "plugin:workspace-overview"
@@ -130,10 +120,10 @@
                     "id": "Workspace",
                     "labelMode": "index",
                     "occupiedColor": "error",
-                    "pillSize": 0.73,
+                    "pillSize": 0.6900000000000001,
                     "showApplications": false,
                     "showApplicationsHover": true,
-                    "showBadge": true,
+                    "showBadge": false,
                     "showLabelsOnlyWhenOccupied": false,
                     "unfocusedIconsOpacity": 1
                 },
@@ -166,7 +156,7 @@
             ],
             "right": [
                 {
-                    "compactMode": false,
+                    "compactMode": true,
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
@@ -183,8 +173,8 @@
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
                     "showSwapUsage": true,
-                    "textColor": "none",
-                    "useMonospaceFont": true,
+                    "textColor": "secondary",
+                    "useMonospaceFont": false,
                     "usePadding": true
                 },
                 {
@@ -242,12 +232,65 @@
                 },
                 {
                     "clockColor": "none",
-                    "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "customFont": "Liberation Sans",
+                    "formatHorizontal": "HH:mm ddd MMM d",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false
+                    "useCustomFont": true
+                },
+                {
+                    "defaultSettings": {
+                        "autoHeight": true,
+                        "bindOverrides": {
+                        },
+                        "cheatsheetData": [
+                        ],
+                        "columnCount": 3,
+                        "descriptionTextColor": "",
+                        "detectedCompositor": "",
+                        "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
+                        "hyprlandLuaConfigPath": "~/.config/hypr/hyprland.lua",
+                        "hyprlandParserMode": "auto",
+                        "keyColorAlt": "#FF6B6B",
+                        "keyColorCtrl": "",
+                        "keyColorDefault": "#6C757D",
+                        "keyColorMod2": "",
+                        "keyColorMod3": "",
+                        "keyColorMod5": "",
+                        "keyColorMouse": "#F38181",
+                        "keyColorNumeric": "#A8DADC",
+                        "keyColorPrint": "#95E1D3",
+                        "keyColorShift": "",
+                        "keyColorSuper": "",
+                        "keyColorXF86": "#4ECDC4",
+                        "keyLabelColor": "#FFFFFF",
+                        "keyLabelMod2": "",
+                        "keyLabelMod3": "",
+                        "keyLabelMod5": "",
+                        "keyTextAlt": "",
+                        "keyTextCtrl": "",
+                        "keyTextDefault": "",
+                        "keyTextMod2": "",
+                        "keyTextMod3": "",
+                        "keyTextMod5": "",
+                        "keyTextMouse": "",
+                        "keyTextNumeric": "",
+                        "keyTextPrint": "",
+                        "keyTextShift": "",
+                        "keyTextSuper": "",
+                        "keyTextXF86": "",
+                        "mangoConfigPath": "~/.config/mango/config.conf",
+                        "mergeSequentialBinds": true,
+                        "modKeyVariable": "$mod",
+                        "niriConfigPath": "~/.config/niri/config.kdl",
+                        "showUndescribedBinds": true,
+                        "splitLargeWorkspaceCategory": true,
+                        "windowHeight": 850,
+                        "windowWidth": 1400,
+                        "workspaceSplitThreshold": 12
+                    },
+                    "id": "plugin:keybind-cheatsheet"
                 }
             ]
         }
@@ -277,7 +320,7 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "generationMethod": "tonal-spot",
+        "generationMethod": "faithful",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
@@ -347,7 +390,7 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
+        "enabled": true,
         "gridSnap": false,
         "gridSnapScale": false,
         "monitorWidgets": [
@@ -355,31 +398,49 @@
                 "name": "DP-3",
                 "widgets": [
                 ]
+            },
+            {
+                "name": "DP-1",
+                "widgets": [
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "minimal",
+                        "customFont": "Droid Sans",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 1.5632363311498163,
+                        "showBackground": true,
+                        "useCustomFont": true,
+                        "x": 1739,
+                        "y": 974
+                    }
+                ]
             }
         ],
         "overviewEnabled": true
     },
     "dock": {
         "animationSpeed": 1,
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0.22,
         "colorizeIcons": false,
         "deadOpacity": 0.47000000000000003,
-        "displayMode": "exclusive",
+        "displayMode": "auto_hide",
         "dockType": "floating",
         "enabled": true,
-        "floatingRatio": 0,
+        "floatingRatio": 0.3,
         "groupApps": true,
-        "groupClickAction": "list",
+        "groupClickAction": "cycle",
         "groupContextMenuMode": "extended",
         "groupIndicatorStyle": "number",
         "inactiveIndicators": true,
-        "indicatorColor": "secondary",
-        "indicatorOpacity": 0.45,
+        "indicatorColor": "error",
+        "indicatorOpacity": 0.4,
         "indicatorThickness": 3,
         "launcherIcon": "",
         "launcherIconColor": "error",
         "launcherPosition": "start",
-        "launcherUseDistroLogo": false,
+        "launcherUseDistroLogo": true,
         "monitors": [
             "DP-3",
             "DP-1"
@@ -394,6 +455,8 @@
             "gpodder",
             "qmmp",
             "signal",
+            "joplin-desktop",
+            "joplin-app-desktop",
             "io.missioncenter.MissionCenter",
             "org.gnome.baobab",
             "org.stellarium.Stellarium",
@@ -407,7 +470,7 @@
         "showDockIndicator": true,
         "showLauncherIcon": false,
         "sitOnFrame": false,
-        "size": 0.53
+        "size": 0.37
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -420,7 +483,7 @@
         "clockFormat": "hh\\nmm",
         "clockStyle": "digital",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.09,
+        "dimmerOpacity": 0.3,
         "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
@@ -460,7 +523,7 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": false,
-        "radiusRatio": 0.38,
+        "radiusRatio": 0.41000000000000003,
         "reverseScroll": false,
         "scaleRatio": 0.8500000000000001,
         "screenRadiusRatio": 0.55,
@@ -690,11 +753,11 @@
     },
     "ui": {
         "boxBorderEnabled": true,
-        "fontDefault": "Carlito",
-        "fontDefaultScale": 1.08,
+        "fontDefault": "Ubuntu Light",
+        "fontDefaultScale": 0.85,
         "fontFixed": "Cascadia Mono",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.43,
+        "panelBackgroundOpacity": 0.32,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",

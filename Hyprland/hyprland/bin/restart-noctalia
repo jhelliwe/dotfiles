@@ -1,4 +1,4 @@
 #!/bin/sh
 
 pkill qs
-qs -c noctalia-shell -d
+QT_QPA_PLATFORMTHEME=gtk3 qs -c noctalia-shell -d

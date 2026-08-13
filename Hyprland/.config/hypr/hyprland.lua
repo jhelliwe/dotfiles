@@ -12,7 +12,7 @@ local menu = "wofi --show drun"
 
 -- Hyprland Env Vars
 hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "28")
+hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "Capitaine Gruvbox")
 hl.env("XCURSOR_THEME", "DeppinDark-cursors")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
@@ -22,37 +22,43 @@ hl.env("GDK_BACKEND", "wayland")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
-hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+-- hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 
 -- Custom Bezier curves for animations
 hl.curve("slidebezier", { type = "bezier", points = { { 0.60, 0.9 }, { 1.1, 0.75 } } })
-hl.curve("myBezier", { type = "bezier", points = { { 0.30, 1.3 }, { 0.4, 1.15 } } })
+--hl.curve("myBezier", { type = "bezier", points = { { 0.30, 1.3 }, { 0.4, 1.15 } } })
+
+hl.curve( "rubber", { type = "spring", mass = 1, stiffness = 70, dampening = 10 } )
+
 hl.animation({
     leaf = "windows",
     enabled = true,
     speed = 6,
-    bezier = "myBezier",
+    bezier = "default",
 })
 hl.animation({
     leaf = "windowsIn",
     enabled = true,
     speed = 8,
-    bezier = "myBezier",
+    --bezier = "default",
+    spring = "rubber",
     style = "popin 9%",
 })
 hl.animation({
     leaf = "windowsOut",
     enabled = true,
     speed = 7,
-    bezier = "myBezier",
+    --bezier = "default",
+    spring = "rubber",
     style = "popin",
 })
 hl.animation({
     leaf = "windowsMove",
     enabled = true,
     speed = 7,
-    bezier = "myBezier",
+    bezier = "default",
     style = "slide",
 })
 hl.animation({
@@ -92,15 +98,12 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + CTRL + R", hl.dsp.exec_cmd("~/hyprland/bin/restart-noctalia"))
--- hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/hyprland/bin/locker"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call lockScreen lock"))
--- hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/waypaper/bin/waypaper"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call wallpaper toggle"))
 hl.bind(mainMod .. " + X", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pin())
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/hyprland/bin/start-mailspring"))
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprgui"))
 
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
@@ -170,7 +173,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-     name = "kitty-no-border",
+     name = "kitty-border",
      match = {
          class = "kitty",
      },
@@ -180,15 +183,15 @@ hl.window_rule({
 hl.window_rule({
     name = "slack-opaque",
     match = {
-        class = "Slack",
+        class = "slack",
     },
-    opacity = 0.95,
+    opacity = 0.85,
 })
 
 hl.window_rule({
     name = "spotify-opaque",
     match = {
-        class = "spotify",
+        class = "Spotify",
     },
     opacity = 0.95,
 })
@@ -198,7 +201,15 @@ hl.window_rule({
     match = {
         class = "vesktop",
     },
-    opacity = 0.9,
+    opacity = 0.85,
+})
+
+hl.window_rule({
+    name = "gPodder-opaque",
+    match = {
+        class = "gpodder",
+    },
+    opacity = 0.85,
 })
 
 hl.window_rule({
@@ -225,6 +236,17 @@ hl.window_rule({
         float = true,
     },
     border_size = 0,
+})
+
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|background|notification|dock|panel|attached-panel|osd|window-switcher)$",
+  },
+  no_anim = true,
+  ignore_alpha = 0.2,
+  blur = true,
+  blur_popups = true,
 })
 
 -- Main Config Bits
@@ -264,14 +286,12 @@ hl.config({
             color = "rgba(1a1a1aee)",
         },
         blur = {
-            enabled = true,
-            size = 12,
-            passes = 3,
+	    enabled = true,
+	    size = 3,
+	    passes = 2,
+	    vibrancy = 0.1696,
+	    xray = false,
             new_optimizations = true,
-            brightness = 1.25,
-            noise = 0.1222,
-            vibrancy = 2,
-            xray = true,
         },
     },
     animations = {
@@ -283,6 +303,9 @@ hl.config({
     },
     master = {
         new_status = "master",
+    },
+    scrolling = {
+        column_width = 0.9
     },
     misc = {
         force_default_wallpaper = 0,
@@ -319,35 +342,14 @@ hl.config({
     gestures = {
         -- workspace_swipe = false
     },
---	plugin = {
---        hyprexpo = {
---            columns = 4,
---            gaps_in = 10,
---            gaps_out = 10,
---            bg_col = "rgb(444444)",
---			border_color = "rgba(ff3300ee) rgba(8f00ffee)",
---			border_color_current = "rgba(ffff00ee)",
---			border_color_focus = "rgba(ffaa00ee)",
---			selection_label_color = "rgba(ff3300ee)",
---            workspace_method = "first 1",
---            keynav_enable = 0,
---            label_enable = 1,
---            border_width = 4,
---			tile_rounding = 20,
---			label_font_size = 12,
---			label_bg_shape = "rounded",
---			label_padding = 64,
---			label_bg_rounding = 20,
---        },
---    },
     plugin = {
         scrolloverview = {
             gesture_distance = 300, -- how far is the "max" for the gesture
-            scale = 0.5, -- preferred overview scale
-            workspace_gap = 100,
+            scale = 0.6, -- preferred overview scale
+            workspace_gap = 10,
             layout = "vertical", -- vertical or horizontal
             wallpaper = 0, -- 0: global only, 1: per-workspace only, 2: both
-            blur = false, -- blur only the main overview wallpaper
+            blur = true, -- blur only the main overview wallpaper
 
             shadow = {
                 enabled = false,
@@ -371,8 +373,4 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
     hl.exec_cmd("hyprctl setcursor 'Capitaine Gruvbox' 24")
-end)
-
-hl.on("hyprland.shutdown", function()
-    hl.exec_cmd("systemctl --user stop hyprpolkitagent")
 end)

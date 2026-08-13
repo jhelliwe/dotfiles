@@ -1,0 +1,511 @@
+{
+  "cheatsheetData": [
+    {
+      "title": "Other",
+      "binds": [
+        {
+          "keys": "Super + B",
+          "desc": "Launch Browser",
+          "bindId": "|64|B|000|__lua",
+          "undescribed": false,
+          "_mainKey": "B",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + T",
+          "desc": "Terminal",
+          "bindId": "|64|T|000|__lua",
+          "undescribed": false,
+          "_mainKey": "T",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + K",
+          "desc": "Kill / Close Window",
+          "bindId": "|64|K|000|__lua",
+          "undescribed": false,
+          "_mainKey": "K",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Shift + Q",
+          "desc": "Quit Hyprland",
+          "bindId": "|65|Q|000|__lua",
+          "undescribed": false,
+          "_mainKey": "Q",
+          "_mods": "Super+Shift",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + E",
+          "desc": "File Manager",
+          "bindId": "|64|E|000|__lua",
+          "undescribed": false,
+          "_mainKey": "E",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + F",
+          "desc": "Make Window Floating",
+          "bindId": "|64|F|000|__lua",
+          "undescribed": false,
+          "_mainKey": "F",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + R",
+          "desc": "Run Program",
+          "bindId": "|64|R|000|__lua",
+          "undescribed": false,
+          "_mainKey": "R",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Ctrl + R",
+          "desc": "Restart Noctalia",
+          "bindId": "|68|R|000|__lua",
+          "undescribed": false,
+          "_mainKey": "R",
+          "_mods": "Super+Ctrl",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + L",
+          "desc": "Lock the Screen",
+          "bindId": "|64|L|000|__lua",
+          "undescribed": false,
+          "_mainKey": "L",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + W",
+          "desc": "Change Wallpaper",
+          "bindId": "|64|W|000|__lua",
+          "undescribed": false,
+          "_mainKey": "W",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + X",
+          "desc": "Make Window Fullscreen",
+          "bindId": "|64|X|000|__lua",
+          "undescribed": false,
+          "_mainKey": "X",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + P",
+          "desc": "Pin a Window to all Workspaces",
+          "bindId": "|64|P|000|__lua",
+          "undescribed": false,
+          "_mainKey": "P",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + S",
+          "desc": "Take Screenshot",
+          "bindId": "|64|S|000|__lua",
+          "undescribed": false,
+          "_mainKey": "S",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + M",
+          "desc": "Mail Client",
+          "bindId": "|64|M|000|__lua",
+          "undescribed": false,
+          "_mainKey": "M",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + LEFT",
+          "desc": "Switch Workspace Left",
+          "bindId": "|64|left|000|__lua",
+          "undescribed": false,
+          "_mainKey": "left",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + RIGHT",
+          "desc": "Switch Workspace Right",
+          "bindId": "|64|right|000|__lua",
+          "undescribed": false,
+          "_mainKey": "right",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + UP",
+          "desc": "Workspace Overview",
+          "bindId": "|64|up|000|__lua",
+          "undescribed": false,
+          "_mainKey": "up",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + DOWN",
+          "desc": "Switch Workspace Down",
+          "bindId": "|64|down|000|__lua",
+          "undescribed": false,
+          "_mainKey": "down",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + 0",
+          "desc": "Switch Workspace",
+          "bindId": "|64|0|000|__lua",
+          "undescribed": false,
+          "_mainKey": "0",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Shift + 0",
+          "desc": "Move current Window to Workspace",
+          "bindId": "|65|0|000|__lua",
+          "undescribed": false,
+          "_mainKey": "0",
+          "_mods": "Super+Shift",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Scroll Down",
+          "desc": "Scroll Workspaces",
+          "bindId": "|64|mouse_down|000|__lua",
+          "undescribed": false,
+          "_mainKey": "mouse_down",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Scroll Up",
+          "desc": "Scroll Workspaces",
+          "bindId": "|64|mouse_up|000|__lua",
+          "undescribed": false,
+          "_mainKey": "mouse_up",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Ctrl + RIGHT",
+          "desc": "Next Workspace",
+          "bindId": "|4|right|000|__lua",
+          "undescribed": false,
+          "_mainKey": "right",
+          "_mods": "Ctrl",
+          "_verb": ""
+        },
+        {
+          "keys": "Ctrl + LEFT",
+          "desc": "Previous Workspace",
+          "bindId": "|4|left|000|__lua",
+          "undescribed": false,
+          "_mainKey": "left",
+          "_mods": "Ctrl",
+          "_verb": ""
+        },
+        {
+          "keys": "Ctrl + UP",
+          "desc": "Workspace Overview",
+          "bindId": "|4|up|000|__lua",
+          "undescribed": false,
+          "_mainKey": "up",
+          "_mods": "Ctrl",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + PERIOD",
+          "desc": "hyprscroll right",
+          "bindId": "|64|period|000|__lua",
+          "undescribed": false,
+          "_mainKey": "period",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + COMMA",
+          "desc": "hyprscroll left",
+          "bindId": "|64|comma|000|__lua",
+          "undescribed": false,
+          "_mainKey": "comma",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Left Click",
+          "desc": "Move Window",
+          "bindId": "|64|mouse:272|000|__lua",
+          "undescribed": false,
+          "_mainKey": "mouse:272",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Right Click",
+          "desc": "Resize Window",
+          "bindId": "|64|mouse:273|000|__lua",
+          "undescribed": false,
+          "_mainKey": "mouse:273",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Vol Up",
+          "desc": "Volume Up",
+          "bindId": "|0|XF86AudioRaiseVolume|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86AudioRaiseVolume",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Vol Down",
+          "desc": "Volume Down",
+          "bindId": "|0|XF86AudioLowerVolume|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86AudioLowerVolume",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Mute",
+          "desc": "Mute Audio",
+          "bindId": "|0|XF86AudioMute|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86AudioMute",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Bright Up",
+          "desc": "Increase Brightness",
+          "bindId": "|0|XF86MonBrightnessUp|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86MonBrightnessUp",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Bright Down",
+          "desc": "Decrease Brightness",
+          "bindId": "|0|XF86MonBrightnessDown|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86MonBrightnessDown",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Next",
+          "desc": "Next Track",
+          "bindId": "|0|XF86AudioNext|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86AudioNext",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Prev",
+          "desc": "Previous Track",
+          "bindId": "|0|XF86AudioPrev|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86AudioPrev",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Play",
+          "desc": "Play Audio",
+          "bindId": "|0|XF86AudioPlay|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86AudioPlay",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Stop",
+          "desc": "Stop Audio",
+          "bindId": "|0|XF86AudioStop|000|__lua",
+          "undescribed": false,
+          "_mainKey": "XF86AudioStop",
+          "_mods": "",
+          "_verb": ""
+        }
+      ]
+    }
+  ],
+  "detectedCompositor": "hyprland",
+  "windowWidth": 1400,
+  "windowHeight": 850,
+  "autoHeight": true,
+  "columnCount": 3,
+  "modKeyVariable": "$mod",
+  "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
+  "hyprlandLuaConfigPath": "~/.config/hypr/hyprland.lua",
+  "hyprlandParserMode": "auto",
+  "niriConfigPath": "~/.config/niri/config.kdl",
+  "mangoConfigPath": "~/.config/mango/config.conf",
+  "mergeSequentialBinds": true,
+  "showUndescribedBinds": false,
+  "splitLargeWorkspaceCategory": true,
+  "workspaceSplitThreshold": 12,
+  "keyColorAlt": "#FF6B6B",
+  "keyColorXF86": "#4ECDC4",
+  "keyColorPrint": "#95E1D3",
+  "keyColorNumeric": "#A8DADC",
+  "keyColorMouse": "#F38181",
+  "keyColorSuper": "",
+  "keyColorCtrl": "",
+  "keyColorShift": "",
+  "keyColorDefault": "#6C757D",
+  "keyLabelColor": "#FFFFFF",
+  "keyTextSuper": "",
+  "keyTextCtrl": "",
+  "keyTextShift": "",
+  "keyTextAlt": "",
+  "keyTextXF86": "",
+  "keyTextPrint": "",
+  "keyTextNumeric": "",
+  "keyTextMouse": "",
+  "keyTextDefault": "",
+  "keyColorMod2": "",
+  "keyColorMod3": "",
+  "keyColorMod5": "",
+  "keyTextMod2": "",
+  "keyTextMod3": "",
+  "keyTextMod5": "",
+  "keyLabelMod2": "",
+  "keyLabelMod3": "",
+  "keyLabelMod5": "",
+  "descriptionTextColor": "",
+  "bindOverrides": {
+    "|64|B|000|__lua": {
+      "desc": "Launch Browser"
+    },
+    "|64|T|000|__lua": {
+      "desc": "Terminal"
+    },
+    "|64|K|000|__lua": {
+      "desc": "Kill / Close Window"
+    },
+    "|65|Q|000|__lua": {
+      "desc": "Quit Hyprland"
+    },
+    "|64|E|000|__lua": {
+      "desc": "File Manager"
+    },
+    "|64|F|000|__lua": {
+      "desc": "Make Window Floating"
+    },
+    "|64|R|000|__lua": {
+      "desc": "Run Program"
+    },
+    "|68|R|000|__lua": {
+      "desc": "Restart Noctalia"
+    },
+    "|64|L|000|__lua": {
+      "desc": "Lock the Screen"
+    },
+    "|64|W|000|__lua": {
+      "desc": "Change Wallpaper"
+    },
+    "|64|X|000|__lua": {
+      "desc": "Make Window Fullscreen"
+    },
+    "|64|P|000|__lua": {
+      "desc": "Pin a Window to all Workspaces"
+    },
+    "|64|S|000|__lua": {
+      "desc": "Take Screenshot"
+    },
+    "|64|M|000|__lua": {
+      "desc": "Mail Client"
+    },
+    "|64|left|000|__lua": {
+      "desc": "Switch Workspace Left"
+    },
+    "|64|right|000|__lua": {
+      "desc": "Switch Workspace Right"
+    },
+    "|64|up|000|__lua": {
+      "desc": "Workspace Overview"
+    },
+    "|64|down|000|__lua": {
+      "desc": "Switch Workspace Down"
+    },
+    "|64|0|000|__lua": {
+      "desc": "Switch Workspace"
+    },
+    "|65|0|000|__lua": {
+      "desc": "Move current Window to Workspace"
+    },
+    "|64|mouse_down|000|__lua": {
+      "desc": "Scroll Workspaces"
+    },
+    "|64|mouse_up|000|__lua": {
+      "desc": "Scroll Workspaces"
+    },
+    "|4|right|000|__lua": {
+      "desc": "Next Workspace"
+    },
+    "|4|left|000|__lua": {
+      "desc": "Previous Workspace"
+    },
+    "|4|up|000|__lua": {
+      "desc": "Workspace Overview"
+    },
+    "|0|XF86AudioRaiseVolume|000|__lua": {
+      "desc": "Volume Up"
+    },
+    "|64|period|000|__lua": {
+      "desc": "hyprscroll right"
+    },
+    "|64|comma|000|__lua": {
+      "desc": "hyprscroll left"
+    },
+    "|64|mouse:272|000|__lua": {
+      "desc": "Move Window"
+    },
+    "|64|mouse:273|000|__lua": {
+      "desc": "Resize Window"
+    },
+    "|0|XF86AudioLowerVolume|000|__lua": {
+      "desc": "Volume Down"
+    },
+    "|0|XF86AudioMute|000|__lua": {
+      "desc": "Mute Audio"
+    },
+    "|0|XF86MonBrightnessUp|000|__lua": {
+      "desc": "Increase Brightness"
+    },
+    "|0|XF86MonBrightnessDown|000|__lua": {
+      "desc": "Decrease Brightness"
+    },
+    "|0|XF86AudioNext|000|__lua": {
+      "desc": "Next Track"
+    },
+    "|0|XF86AudioPrev|000|__lua": {
+      "desc": "Previous Track"
+    },
+    "|0|XF86AudioPlay|000|__lua": {
+      "desc": "Play Audio"
+    },
+    "|0|XF86AudioStop|000|__lua": {
+      "desc": "Stop Audio"
+    }
+  }
+}
