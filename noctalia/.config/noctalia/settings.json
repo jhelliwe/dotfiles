@@ -78,17 +78,6 @@
         "widgetSpacing": 2,
         "widgets": {
             "center": [
-                {
-                    "colorizeIcons": false,
-                    "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 300,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "showText": true,
-                    "textColor": "none",
-                    "useFixedWidth": false
-                }
             ],
             "left": [
                 {
@@ -100,11 +89,6 @@
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
-                },
-                {
-                    "defaultSettings": {
-                    },
-                    "id": "plugin:workspace-overview"
                 },
                 {
                     "characterCount": 10,
@@ -128,8 +112,66 @@
                     "unfocusedIconsOpacity": 1
                 },
                 {
+                    "iconColor": "none",
+                    "id": "KeepAwake",
+                    "textColor": "primary"
+                },
+                {
+                    "defaultSettings": {
+                        "autoHeight": true,
+                        "bindOverrides": {
+                        },
+                        "cheatsheetData": [
+                        ],
+                        "columnCount": 3,
+                        "descriptionTextColor": "",
+                        "detectedCompositor": "",
+                        "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
+                        "hyprlandLuaConfigPath": "~/.config/hypr/hyprland.lua",
+                        "hyprlandParserMode": "auto",
+                        "keyColorAlt": "#FF6B6B",
+                        "keyColorCtrl": "",
+                        "keyColorDefault": "#6C757D",
+                        "keyColorMod2": "",
+                        "keyColorMod3": "",
+                        "keyColorMod5": "",
+                        "keyColorMouse": "#F38181",
+                        "keyColorNumeric": "#A8DADC",
+                        "keyColorPrint": "#95E1D3",
+                        "keyColorShift": "",
+                        "keyColorSuper": "",
+                        "keyColorXF86": "#4ECDC4",
+                        "keyLabelColor": "#FFFFFF",
+                        "keyLabelMod2": "",
+                        "keyLabelMod3": "",
+                        "keyLabelMod5": "",
+                        "keyTextAlt": "",
+                        "keyTextCtrl": "",
+                        "keyTextDefault": "",
+                        "keyTextMod2": "",
+                        "keyTextMod3": "",
+                        "keyTextMod5": "",
+                        "keyTextMouse": "",
+                        "keyTextNumeric": "",
+                        "keyTextPrint": "",
+                        "keyTextShift": "",
+                        "keyTextSuper": "",
+                        "keyTextXF86": "",
+                        "mangoConfigPath": "~/.config/mango/config.conf",
+                        "mergeSequentialBinds": true,
+                        "modKeyVariable": "$mod",
+                        "niriConfigPath": "~/.config/niri/config.kdl",
+                        "showUndescribedBinds": true,
+                        "splitLargeWorkspaceCategory": true,
+                        "windowHeight": 850,
+                        "windowWidth": 1400,
+                        "workspaceSplitThreshold": 12
+                    },
+                    "id": "plugin:keybind-cheatsheet"
+                },
+                {
                     "capsLockIcon": "letter-c",
-                    "hideWhenOff": false,
+                    "hideWhenOff": true,
                     "id": "LockKeys",
                     "numLockIcon": "letter-n",
                     "scrollLockIcon": "letter-s",
@@ -152,11 +194,22 @@
                     "textColor": "none",
                     "useFixedWidth": false,
                     "visualizerType": "wave"
+                },
+                {
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "id": "ActiveWindow",
+                    "maxWidth": 300,
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "showText": true,
+                    "textColor": "none",
+                    "useFixedWidth": false
                 }
             ],
             "right": [
                 {
-                    "compactMode": true,
+                    "compactMode": false,
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
@@ -240,57 +293,8 @@
                     "useCustomFont": true
                 },
                 {
-                    "defaultSettings": {
-                        "autoHeight": true,
-                        "bindOverrides": {
-                        },
-                        "cheatsheetData": [
-                        ],
-                        "columnCount": 3,
-                        "descriptionTextColor": "",
-                        "detectedCompositor": "",
-                        "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
-                        "hyprlandLuaConfigPath": "~/.config/hypr/hyprland.lua",
-                        "hyprlandParserMode": "auto",
-                        "keyColorAlt": "#FF6B6B",
-                        "keyColorCtrl": "",
-                        "keyColorDefault": "#6C757D",
-                        "keyColorMod2": "",
-                        "keyColorMod3": "",
-                        "keyColorMod5": "",
-                        "keyColorMouse": "#F38181",
-                        "keyColorNumeric": "#A8DADC",
-                        "keyColorPrint": "#95E1D3",
-                        "keyColorShift": "",
-                        "keyColorSuper": "",
-                        "keyColorXF86": "#4ECDC4",
-                        "keyLabelColor": "#FFFFFF",
-                        "keyLabelMod2": "",
-                        "keyLabelMod3": "",
-                        "keyLabelMod5": "",
-                        "keyTextAlt": "",
-                        "keyTextCtrl": "",
-                        "keyTextDefault": "",
-                        "keyTextMod2": "",
-                        "keyTextMod3": "",
-                        "keyTextMod5": "",
-                        "keyTextMouse": "",
-                        "keyTextNumeric": "",
-                        "keyTextPrint": "",
-                        "keyTextShift": "",
-                        "keyTextSuper": "",
-                        "keyTextXF86": "",
-                        "mangoConfigPath": "~/.config/mango/config.conf",
-                        "mergeSequentialBinds": true,
-                        "modKeyVariable": "$mod",
-                        "niriConfigPath": "~/.config/niri/config.kdl",
-                        "showUndescribedBinds": true,
-                        "splitLargeWorkspaceCategory": true,
-                        "windowHeight": 850,
-                        "windowWidth": 1400,
-                        "workspaceSplitThreshold": 12
-                    },
-                    "id": "plugin:keybind-cheatsheet"
+                    "iconColor": "error",
+                    "id": "SessionMenu"
                 }
             ]
         }
@@ -320,7 +324,7 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "generationMethod": "faithful",
+        "generationMethod": "tonal-spot",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
@@ -412,7 +416,7 @@
                         "scale": 1.5632363311498163,
                         "showBackground": true,
                         "useCustomFont": true,
-                        "x": 1739,
+                        "x": 1717,
                         "y": 974
                     }
                 ]
@@ -421,7 +425,7 @@
         "overviewEnabled": true
     },
     "dock": {
-        "animationSpeed": 1,
+        "animationSpeed": 0.72,
         "backgroundOpacity": 0.22,
         "colorizeIcons": false,
         "deadOpacity": 0.47000000000000003,
@@ -434,9 +438,9 @@
         "groupContextMenuMode": "extended",
         "groupIndicatorStyle": "number",
         "inactiveIndicators": true,
-        "indicatorColor": "error",
-        "indicatorOpacity": 0.4,
-        "indicatorThickness": 3,
+        "indicatorColor": "secondary",
+        "indicatorOpacity": 0.25,
+        "indicatorThickness": 6,
         "launcherIcon": "",
         "launcherIconColor": "error",
         "launcherPosition": "start",
@@ -455,8 +459,8 @@
             "gpodder",
             "qmmp",
             "signal",
+            "com.valvesoftware.Steam",
             "joplin-desktop",
-            "joplin-app-desktop",
             "io.missioncenter.MissionCenter",
             "org.gnome.baobab",
             "org.stellarium.Stellarium",
@@ -486,7 +490,7 @@
         "dimmerOpacity": 0.3,
         "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
-        "enableLockScreenMediaControls": false,
+        "enableLockScreenMediaControls": true,
         "enableShadows": true,
         "forceBlackScreenCorners": true,
         "iRadiusRatio": 0.44,
@@ -516,12 +520,12 @@
         },
         "language": "",
         "lockOnSuspend": true,
-        "lockScreenAnimations": false,
-        "lockScreenBlur": 0.51,
+        "lockScreenAnimations": true,
+        "lockScreenBlur": 0.72,
         "lockScreenCountdownDuration": 10000,
         "lockScreenMonitors": [
         ],
-        "lockScreenTint": 0,
+        "lockScreenTint": 0.64,
         "passwordChars": false,
         "radiusRatio": 0.41000000000000003,
         "reverseScroll": false,
@@ -753,8 +757,8 @@
     },
     "ui": {
         "boxBorderEnabled": true,
-        "fontDefault": "Ubuntu Light",
-        "fontDefaultScale": 0.85,
+        "fontDefault": "Carlito",
+        "fontDefaultScale": 1,
         "fontFixed": "Cascadia Mono",
         "fontFixedScale": 1,
         "panelBackgroundOpacity": 0.32,

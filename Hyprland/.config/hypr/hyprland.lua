@@ -26,10 +26,8 @@ hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 
--- Custom Bezier curves for animations
+-- Bezier curves for animations
 hl.curve("slidebezier", { type = "bezier", points = { { 0.60, 0.9 }, { 1.1, 0.75 } } })
---hl.curve("myBezier", { type = "bezier", points = { { 0.30, 1.3 }, { 0.4, 1.15 } } })
-
 hl.curve( "rubber", { type = "spring", mass = 1, stiffness = 70, dampening = 10 } )
 
 hl.animation({
@@ -42,7 +40,6 @@ hl.animation({
     leaf = "windowsIn",
     enabled = true,
     speed = 8,
-    --bezier = "default",
     spring = "rubber",
     style = "popin 9%",
 })
@@ -50,7 +47,6 @@ hl.animation({
     leaf = "windowsOut",
     enabled = true,
     speed = 7,
-    --bezier = "default",
     spring = "rubber",
     style = "popin",
 })
@@ -97,9 +93,8 @@ hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + CTRL + R", hl.dsp.exec_cmd("~/hyprland/bin/restart-noctalia"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call lockScreen lock"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call wallpaper toggle"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("noctalia msg session lock"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("noctalia msg panel-open wallpaper"))
 hl.bind(mainMod .. " + X", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pin())
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures"))
@@ -144,16 +139,19 @@ hl.bind(mainMod .. " + comma", hl.dsp.layout("move -col"))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("noctalia msg window-switcher"))
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume muteOutput"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness increase"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media next"))
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media previous"))
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"))
-hl.bind("XF86AudioStop", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media stop"))
+local ipc = "noctalia msg "
+
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"))
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("noctalia msg media next"))
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("noctalia msg media previous"))
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("noctalia msg media toggle"))
+hl.bind("XF86AudioStop", hl.dsp.exec_cmd("noctalia msg media stop"))
 
 -- Custom Window Rules
 hl.window_rule({
@@ -238,13 +236,19 @@ hl.window_rule({
     border_size = 0,
 })
 
+hl.window_rule({
+    match = { class = "dev.noctalia.Noctalia" },
+    float = true,
+    size = { 1080, 920 },
+})
+
 hl.layer_rule({
   name = "noctalia",
   match = {
-    namespace = "^noctalia-(bar-.+|background|notification|dock|panel|attached-panel|osd|window-switcher)$",
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
   },
   no_anim = true,
-  ignore_alpha = 0.2,
+  ignore_alpha = 0.5,
   blur = true,
   blur_popups = true,
 })
@@ -349,7 +353,7 @@ hl.config({
             workspace_gap = 10,
             layout = "vertical", -- vertical or horizontal
             wallpaper = 0, -- 0: global only, 1: per-workspace only, 2: both
-            blur = true, -- blur only the main overview wallpaper
+            blur = false, -- blur only the main overview wallpaper
 
             shadow = {
                 enabled = false,
@@ -369,8 +373,16 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpm reload -n")
     hl.exec_cmd("swww-daemon")
     hl.exec_cmd("nm-applet")
-    hl.exec_cmd("qs -c noctalia-shell")
+    hl.exec_cmd("noctalia")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
     hl.exec_cmd("hyprctl setcursor 'Capitaine Gruvbox' 24")
 end)
+
+
+
+
+
+-- >>> HYPRLAND VISUAL EDITOR (HVE) <<<
+pcall(function() dofile(os.getenv("HOME") .. "/.cache/noctalia/HVE/overlay.lua") end)
+-- <<< HYPRLAND VISUAL EDITOR (HVE) <<<
