@@ -22,7 +22,6 @@ hl.env("GDK_BACKEND", "wayland")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
--- hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 
@@ -139,10 +138,14 @@ hl.bind(mainMod .. " + comma", hl.dsp.layout("move -col"))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
-hl.bind("ALT + TAB", hl.dsp.exec_cmd("noctalia msg window-switcher"))
 
+-- special workspace binds
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ workspace = "special:s1" }))
+hl.bind(mainMod .. " + H", hl.dsp.workspace.toggle_special("s1"))
+
+-- noctalia binds
 local ipc = "noctalia msg "
-
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("noctalia msg window-switcher"))
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
