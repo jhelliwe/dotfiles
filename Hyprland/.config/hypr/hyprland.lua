@@ -5,14 +5,17 @@ hl.monitor({
     output = "",
     mode = "preferred",
     position = "auto",
-    scale = "1",
+    scale = "1.25",
+    bitdepth = 10,
+    vrr, "1",
+    cm = "hdr",
 })
 
 local menu = "wofi --show drun"
 
 -- Hyprland Env Vars
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_SIZE", "20")
+hl.env("HYPRCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_THEME", "Capitaine Gruvbox")
 hl.env("XCURSOR_THEME", "DeppinDark-cursors")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
@@ -186,7 +189,7 @@ hl.window_rule({
     match = {
         class = "slack",
     },
-    opacity = 0.85,
+    opacity = 0.97,
 })
 
 hl.window_rule({
@@ -194,7 +197,7 @@ hl.window_rule({
     match = {
         class = "Spotify",
     },
-    opacity = 0.95,
+    opacity = 0.97,
 })
 
 hl.window_rule({
@@ -202,7 +205,7 @@ hl.window_rule({
     match = {
         class = "vesktop",
     },
-    opacity = 0.85,
+    opacity = 0.97,
 })
 
 hl.window_rule({
@@ -210,7 +213,7 @@ hl.window_rule({
     match = {
         class = "gpodder",
     },
-    opacity = 0.85,
+    opacity = 0.97,
 })
 
 hl.window_rule({
@@ -266,6 +269,8 @@ hl.config({
     },
     xwayland = {
         enabled = true,
+	use_nearest_neighbor = false,
+        force_zero_scaling = true,
     },
     general = {
         gaps_in = 5,
@@ -285,13 +290,13 @@ hl.config({
     decoration = {
         rounding = 8,
         active_opacity = 1.0,
-        inactive_opacity = 0.9,
-        shadow = {
+        inactive_opacity = 0.95,
+	shadow = {
             enabled = true,
-            range = 75,
-            render_power = 4,
-            color = "rgba(1a1a1aee)",
-        },
+            range = 20,
+            render_power = 3,
+            color = 0xee1a1a1a,
+    },
         blur = {
 	    enabled = true,
 	    size = 3,
@@ -325,6 +330,7 @@ hl.config({
         always_follow_on_dnd = true,
         animate_mouse_windowdragging = true,
         enable_anr_dialog = false,
+	vrr = 1,
     },
     cursor = {
         no_warps = true,
@@ -379,7 +385,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("noctalia")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
-    hl.exec_cmd("hyprctl setcursor 'Capitaine Gruvbox' 24")
+    hl.exec_cmd("hyprctl setcursor 'Capitaine Gruvbox' 20")
 end)
 
 
@@ -389,3 +395,5 @@ end)
 -- >>> HYPRLAND VISUAL EDITOR (HVE) <<<
 pcall(function() dofile(os.getenv("HOME") .. "/.cache/noctalia/HVE/overlay.lua") end)
 -- <<< HYPRLAND VISUAL EDITOR (HVE) <<<
+
+
